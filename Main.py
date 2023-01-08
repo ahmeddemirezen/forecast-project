@@ -12,7 +12,6 @@ data4 = [39,44,40,45,38,43,39]
 forecast = fc.Forecast(data3)
 
 forecast.HoltsMethod(0.1,0.1).Print()
-    
-        
+
 
 # print(forecast.Solver())
