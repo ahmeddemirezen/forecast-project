@@ -33,11 +33,11 @@ class Forecast:
         returnValue = Result(0,'Moving Average', result, error, {'step': windowSize}, forecast)
         return returnValue
     
-    def OptimalMA(self):
+    def OptimalMA(self, maxStep = -1):
         p_result, p_error = [] , {}
         p_step = 0
         p_forecast = 0
-        for step in range(1, len(self.data)):
+        for step in range(1, len(self.data) if maxStep == -1 else maxStep):
             temp = self.MovingAverage(step)
             result = temp.result
             error = temp.error
